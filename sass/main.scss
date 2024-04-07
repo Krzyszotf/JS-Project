@@ -1,0 +1,594 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+// INDEX // ***********************************************************
+
+.bodyIndexKP {
+	background-image: radial-gradient(
+		circle,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+	height: 100vh;
+	width: 100%;
+}
+
+// NAV // *************************************************************
+
+.bg-body-tertiary {
+	background-color: rgba(248, 249, 250, 0) !important;
+
+	.navbar-toggler {
+		border: none;
+	}
+
+	.navbar-toggler:focus {
+		box-shadow: none;
+		border: none;
+	}
+
+	.btn-close {
+		--bs-btn-close-focus-shadow: none;
+	}
+}
+
+// TDL LIST // ********************************************************
+
+.tdlContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	min-height: 100vh;
+	background-image: linear-gradient(
+		45deg,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+	padding: 10px;
+	.tdl-app {
+		position: absolute;
+		width: 100%;
+		max-width: 540px;
+		background: rgba(255, 255, 255, 0.595);
+		margin: 100px;
+		padding: 40px 30px 40px;
+		border-radius: 10px;
+
+		h2 {
+			color: #002765;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 30px;
+		}
+		.inputContainer {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background: #edeef0;
+			border-radius: 30px;
+			padding-left: 20px;
+			margin-bottom: 30px;
+
+			input {
+				flex: 1;
+				border: none;
+				outline: none;
+				background: transparent;
+				padding: 10px;
+			}
+
+			button {
+				display: flex;
+				border: none;
+				outline: none;
+				padding: 16px 50px;
+				background: #35eb93;
+				color: #fff;
+				font-size: 25px;
+				border-radius: 40px;
+				cursor: pointer;
+				width: 110px;
+				height: 56px;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		ul {
+			li {
+				position: relative;
+				list-style: none;
+				font-size: 16px;
+				padding: 12px 8px 12px 50px;
+				user-select: none;
+				cursor: pointer;
+			}
+			li::before {
+				content: '';
+				position: absolute;
+				height: 28px;
+				width: 28px;
+				background-image: url(../img/tdl/unchecked.png);
+				background-size: cover;
+				background-position: center;
+				top: 10px;
+				left: 8px;
+			}
+		}
+
+		ul {
+			.checked {
+				color: #555;
+				text-decoration: line-through;
+			}
+			.checked::before {
+				background-image: url(../img/tdl/checked.png);
+			}
+		}
+		ul {
+			li {
+				span {
+					position: absolute;
+					right: 0;
+					top: 8px;
+					width: 35px;
+					font-size: 22px;
+					text-align: center;
+					border-radius: 50%;
+					transition: 0.3s;
+				}
+				span:hover {
+					background-color: #78859a65;
+				}
+			}
+		}
+	}
+}
+
+// CALC // ************************************************************
+
+.calcContainer {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-image: linear-gradient(
+		315deg,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+
+	.calc {
+		position: absolute;
+		border-radius: 28px;
+		padding: 20px;
+		display: grid;
+		grid-template-columns: repeat(4, 90px);
+		margin: 100px;
+		background-color: rgba(59, 69, 84, 0.551);
+
+		input {
+			grid-column: span 4;
+			height: 68px;
+			width: auto;
+			box-shadow: inset -6px -6px 12px #ffffff,
+				inset 6px 6px 13px rgba(0, 0, 0, 0.255);
+			background-color: #e0e0e0;
+			border: none;
+			outline: none;
+			border-radius: 32px;
+			text-align: end;
+			color: black;
+			margin: 40px 0px 40px 0px;
+			padding: 20px;
+			font-size: 40px;
+		}
+
+		button {
+			box-shadow: 0px 0px 10px rgba(200, 200, 200, 0.255);
+			background-color: rgba(59, 69, 84, 0.396);
+			border: none;
+			border-radius: 20px;
+			width: 65px;
+			height: 50px;
+			margin: 10px;
+			font-weight: bold;
+			font-size: 20px;
+			color: #e0e0e0;
+		}
+
+		.fa-solid {
+			background-color: rgba(170, 19, 19, 0);
+		}
+
+		.equal,
+		.clear {
+			width: 155px;
+			grid-column: span 2;
+		}
+	}
+}
+
+// WEATHER //**********************************************************
+
+.weatherContainer {
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+	height: 100vh;
+	color: rgb(255, 255, 255);
+	background-image: linear-gradient(
+		225deg,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+
+	h1 {
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px;
+	}
+
+	input {
+		font-size: 16px;
+		padding: 5px 10px;
+		margin-top: 10px;
+		background: none;
+		border: none;
+		outline: none;
+		color: #fff;
+		border-bottom: 2px solid #ddd;
+		text-transform: uppercase;
+	}
+
+	input::placeholder {
+		color: #ddd;
+		text-transform: lowercase;
+		font-weight: bold;
+	}
+
+	button {
+		padding: 10px;
+		margin-left: 20px;
+		color: #fff;
+		font-weight: bold;
+		background: none;
+		border-radius: 5px;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+	}
+
+	button:hover {
+		color: #333;
+		background-color: #ddd;
+	}
+
+	.wrapper {
+		position: absolute;
+		margin: 100px;
+		width: 800px;
+		padding: 20px 40px;
+		background-color: rgba(0, 0, 0, 0.5);
+		border: 2px solid white;
+		border-radius: 25px;
+		background-image: url(../img/weather/unknown.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-blend-mode: multiply;
+	}
+
+	.top {
+		height: 260px;
+	}
+
+	.bottom {
+		height: 140px;
+	}
+
+	.main-info {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		height: 160px;
+	}
+
+	.city-name {
+		font-size: 40px;
+		text-align: center;
+		margin-bottom: 16px;
+	}
+
+	.headings,
+	.weather-info {
+		display: flex;
+		align-items: center;
+	}
+
+	.headings p,
+	.weather-info p {
+		width: 33.3%;
+		text-align: center;
+		margin: 0px;
+	}
+
+	.headings {
+		height: 35%;
+		text-transform: uppercase;
+		font-weight: bold;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.weather-info {
+		height: 65%;
+		font-size: 26px;
+	}
+
+	.photo {
+		width: 140px;
+		height: 140px;
+		object-fit: contain;
+	}
+
+	.warning {
+		margin-top: 10px;
+		font-size: 14px;
+		color: tomato;
+	}
+}
+
+// QUIZ // ************************************************************
+
+.quizBg {
+	background-image: linear-gradient(
+		135deg,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
+
+	.quizApp {
+		position: absolute;
+		background-color: rgba(255, 255, 255, 0.5);
+		width: 90%;
+		max-width: 600px;
+		margin: 100px auto 0;
+		border-radius: 10px;
+		padding: 30px;
+
+		h1 {
+			font-size: 25px;
+			color: #001e4d;
+			font-weight: 600;
+			border-bottom: 1px solid #333;
+			padding-bottom: 30px;
+		}
+
+		.quiz {
+			padding: 20px 0;
+
+			h2 {
+				font-size: 18px;
+				color: #001e4d;
+				font-weight: 600;
+			}
+
+			#answerBtns {
+				.btn {
+					background-color: rgb(255, 255, 255);
+					color: #222;
+					font-weight: 500;
+					width: 100%;
+					border: 1px solid #222;
+					padding: 15px;
+					margin: 10px 0;
+					text-align: left;
+					border-radius: 10px;
+					transition: 0.5s;
+				}
+				.btn:hover {
+					background-color: #222;
+					color: #fff;
+				}
+
+				.correct {
+					background-color: #9aeabc;
+				}
+
+				.incorrect {
+					background-color: #ff9393;
+				}
+			}
+			#nextBtn {
+				background-color: #001e4d;
+				color: #fff;
+				width: 150px;
+				border: none;
+				padding: 10px;
+				margin: 20px auto 0;
+				border-radius: 10px;
+				display: none;
+			}
+		}
+	}
+}
+
+// CALENDAR // ********************************************************
+
+.ccBg {
+	background: linear-gradient(
+		180deg,
+		#3d3393 0%,
+		#2b76b9 37%,
+		#2cacd1 65%,
+		#35eb93 100%
+	);
+	width: 100%;
+	min-height: 100vh;
+	color: #fff;
+	position: relative;
+
+	.clockContainer {
+		width: 750px;
+		height: 120px;
+		position: absolute;
+		left: 50%;
+		top: 27.5%;
+		transform: translate(-50%, -50%);
+
+		.clock {
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 251, 255, 0);
+			border-radius: 25px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			backdrop-filter: blur(30px);
+			span {
+				font-size: 80px;
+				width: 110px;
+				display: inline-block;
+				text-align: center;
+				position: relative;
+			}
+			span::after {
+				font-size: 16px;
+				position: absolute;
+				bottom: 3px;
+				left: 50%;
+				transform: translate(-50%);
+			}
+
+			#hrs:after {
+				content: 'GODZINA';
+			}
+			#min:after {
+				content: 'MINUTA';
+			}
+			#sec:after {
+				content: 'SEKUNDA';
+			}
+		}
+	}
+
+	.clockContainer::before {
+		content: '';
+		width: 19%;
+		height: 120%;
+		background: #001e4d7e;
+		border-radius: 10px;
+		position: absolute;
+		left: -50px;
+		top: -80px;
+		z-index: -1;
+	}
+	.clockContainer::after {
+		content: '';
+		width: 19%;
+		height: 120%;
+		background: #006c047e;
+		border-radius: 100px;
+		position: absolute;
+		right: -30px;
+		bottom: -90px;
+		z-index: -1;
+	}
+
+	.calendarContainer {
+		width: 750px;
+		height: auto;
+		position: absolute;
+		left: 50%;
+		top: 65%;
+		transform: translate(-50%, -50%);
+		backdrop-filter: blur(40px);
+		border-radius: 25px;
+		background-color: rgba(0, 251, 255, 0);
+		// background-color: #001e4d;
+
+		.calendar {
+			padding: 25px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.currentDate {
+				font-size: 30px;
+				font-weight: 500;
+				margin: 10px;
+			}
+			.caleIcons {
+				span {
+					display: inline-flex;
+					margin: 10px;
+					width: 40px;
+					height: 40px;
+					border-radius: 50%;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+					transition: 0.3s;
+					font-size: 30px;
+				}
+				span:hover {
+					background-color: #006c047e;
+				}
+			}
+		}
+		.weeksDaysContainer {
+			ul {
+				display: flex;
+				list-style: none;
+				flex-wrap: wrap;
+				text-align: center;
+				padding: 0px;
+				margin-bottom: 20px;
+			}
+
+			.days {
+				.inactive {
+					color: #cccccc;
+				}
+				.active {
+				background-color: #001e4d7e;
+				border-radius: 50%;
+				}
+			}
+			
+			.weeks {
+				li {
+					font-weight: 500;
+					font-size: 18px;
+				}
+			}
+
+			ul {
+				li {
+					width: calc(100% / 7);
+					padding: 5px;
+				}
+			}
+		}
+	}
+}
